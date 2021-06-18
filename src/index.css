@@ -181,12 +181,27 @@ Menu
 ===============
 */
 
+.bgg {
+  height: 10rem;
+  background-color: #f8f8f8;
+  /* border: 1px solid black; */
+  opacity: 0.8;
+}
+.gbb {
+  background-image: url("./header.jpg");
+  height: 10rem;
+  margin-bottom: 4rem;
+  margin-top: -5rem;
+  font-weight: 300;
+  width: fit-content;
+}
 .menu {
   padding: 5rem 0;
 }
 .title {
   text-align: center;
   margin-bottom: 2rem;
+  font-weight: bolder;
 }
 .underline {
   width: 5rem;
@@ -201,6 +216,7 @@ Menu
   justify-content: center;
 }
 .filter-btn {
+  font-weight: bold;
   background: transparent;
   border-color: transparent;
   font-size: 1rem;
@@ -214,6 +230,23 @@ Menu
   border-radius: var(--radius);
 }
 .filter-btn:hover {
+  background: var(--clr-gold);
+  color: var(--clr-white);
+}
+.form-btn {
+  margin-left: 10%;
+  font-weight: bold;
+  background: transparent;
+  border-color: transparent;
+  height: 70%;
+  text-transform: capitalize;
+  padding: 0;
+  color: var(--clr-gold);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.form-btn:hover {
+  border-radius: 10%;
   background: var(--clr-gold);
   color: var(--clr-white);
 }
@@ -249,11 +282,32 @@ Menu
 .price {
   color: var(--clr-gold);
 }
+.form {
+  border-style: hidden;
+  cursor: pointer;
+  background-color: rgba(151, 235, 214, 0.404);
+  color: var(--clr-gold);
+  width: 25%;
+  height: 65%;
+  padding: 3% 4%;
+  color: var(--clr-gold);
+  font-weight: bold;
+  border-radius: 20%;
+  font-size: medium;
+}
+
+.but {
+  border-style: hidden;
+  cursor: pointer;
+  color: var(--clr-gold);
+}
 .item-text {
+  justify-content: space-between;
+  column-gap: 10%;
+  display: flex;
   margin-bottom: 0;
   padding-top: 1rem;
 }
-
 @media screen and (min-width: 768px) {
   .menu-item {
     grid-template-columns: 225px 1fr;
@@ -271,5 +325,36 @@ Menu
   }
   .photo {
     height: 150px;
+  }
+  .gbb {
+    width: 100%;
+  }
+}
+.amount {
+  width: 57%;
+}
+@media only screen and (max-width: 360px) {
+  body {
+    max-width: 360px;
+  }
+  .gbb {
+    margin-left: -1.1rem;
+    width: fit-content;
+    min-width: 490px;
+  }
+  .menu-item {
+    margin-left: 4rem;
+    width: 130%;
+    grid-template-columns: 45% 1fr;
+    gap: 0 1.25rem;
+  }
+  .photo {
+    height: 175px;
+  }
+  .amount {
+    width: auto;
+  }
+  .btn {
+    margin: auto;
   }
 }

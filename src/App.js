@@ -10,12 +10,12 @@ function App() {
   const [categories, setCategories] = useState(allCategories);
   const [list, setList] = useState([]);
   const [alert, setAlert] = useState(false);
+
   const setting = (id) => {
     const newList = items.filter((item) => item.title === id);
     setList([...list, newList]);
   };
-  console.log(menu);
-  console.log("list=", list);
+
   const yourOrders = () => {
     setAlert(true);
   };
@@ -31,17 +31,21 @@ function App() {
   return (
     <main>
       <section className="menu section">
-        <div className="title">
-          <h2>Our menu</h2>
-          <div className="underline"></div>
+        <div className="gbb">
+          <div className="bgg">
+            <div className="title">
+              <h2>Our menu</h2>
+              <div className="underline"></div>
+            </div>
+            <Categories
+              yourOrders={yourOrders}
+              filterItems={filterItems}
+              categories={categories}
+            />
+          </div>
         </div>
-        <Categories
-          yourOrders={yourOrders}
-          filterItems={filterItems}
-          categories={categories}
-        />
         {alert ? (
-          <Orders items={list} setting={setting} />
+          <Orders listitem={list} setting={setting} />
         ) : (
           <Menu items={menu} setting={setting} />
         )}
